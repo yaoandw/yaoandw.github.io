@@ -1,8 +1,9 @@
 # Basic
 title: Yaoandw
 subtitle: 世界真奇妙
-welcome_message: <a href="/#blog" target="_blank">开始浏览</a>
-description: yaoandw is programmer with java(back) and iOS(front) skills
+# welcome_message: <a href="/#blog" target="_blank">开始浏览</a>
+welcome_message: 开始浏览
+description: Yaoandw is programmer with java(back) and iOS(front) skills
 creator: <a href="http://yaoandw.github.io">@yaoandw</a>
 
 url: "http://yaoandw.github.io"
@@ -17,13 +18,21 @@ cover_color: blue
 
 # The blog button should not be removed.
 blog_button:
-    title: 文章
+    title: All
     description: 所有文章
 
 # Navigation buttons in the front page.
-#nav:
-#    - {title: Projects, description: My Projects, url: 'http://project.onevcat.com'}
+# nav:
+    # - {title: Kid, description: son, url: '/tag/kid/index.html'}
     # - {title: Another Button, description: A button, url: 'http://example.com'}
+
+mytags:
+    - {title: Java, description: java, url: '/tag/java/index.html'}
+    - {title: iOS, description: iOS, url: '/tag/ios/index.html'}
+    - {title: Android, description: Android, url: '/tag/android/index.html'}
+    - {title: Financial, description: Financial, url: '/tag/financial/index.html'}
+    - {title: Kid, description: Kid, url: '/tag/kid/index.html'}
+    - {title: Other, description: Other, url: '/tag/other/index.html'}
 
 # Pagination
 gems: [jekyll-paginate]

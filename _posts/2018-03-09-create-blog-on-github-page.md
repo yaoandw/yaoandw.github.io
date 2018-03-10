@@ -5,7 +5,7 @@ date: 2018-03-08 15:32:24.000000000 +08:00
 tag: other
 ---
 
-创建项目
+*创建项目
 
 搭建本地环境
 
@@ -20,3 +20,11 @@ tag: other
 `dig yaoandw.netlify.com +noall +answer`
 
 支持https
+
+
+
+ref
+
+http://louisly.com/2016/04/used-jekyll-to-create-my-github-blog/
+
+https://jaeger.itscoder.com/web/2017/08/30/github-page-https

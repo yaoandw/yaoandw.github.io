@@ -5,13 +5,72 @@
     <description>Yaoandw is programmer with java(back) and iOS(front) skills</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 09 Mar 2018 11:50:54 +0800</pubDate>
-    <lastBuildDate>Fri, 09 Mar 2018 11:50:54 +0800</lastBuildDate>
+    <pubDate>Sun, 11 Mar 2018 00:32:01 +0800</pubDate>
+    <lastBuildDate>Sun, 11 Mar 2018 00:32:01 +0800</lastBuildDate>
     <generator>Jekyll v3.4.0</generator>
     
       <item>
+        <title>多个github账号提交问题</title>
+        <description>&lt;p&gt;此方法是基于ssh方式的,https方式还没有尝试成功&lt;/p&gt;
+
+&lt;h4 id=&quot;创建ssh-key&quot;&gt;创建ssh key&lt;/h4&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;ssh-keygen -t rsa -C &quot;your-email-address&quot;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;将文件保存为id_rsa_COMPANY的格式,并保存到&lt;code class=&quot;highlighter-rouge&quot;&gt;~/.ssh/id_rsa_COMPANY&lt;/code&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;把新的key加入到github上&quot;&gt;把新的key加入到github上&lt;/h4&gt;
+
+&lt;p&gt;访问github,https://github.com/settings/keys,创建一个new ssh key,将id_rsa_COMPANY.pub的内容复制上去.&lt;/p&gt;
+
+&lt;p&gt;返回终端,输入&lt;code class=&quot;highlighter-rouge&quot;&gt;ssh-add ~/.ssh/id_rsa_COMPANY&lt;/code&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;创建一个配置文件&quot;&gt;创建一个配置文件&lt;/h4&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;touch&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;~&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/.ssh/&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;config&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;vim&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;config&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;输入&lt;/p&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#Default GitHub&lt;/span&gt;
+Host github.com
+  HostName github.com
+  User git
+  IdentityFile ~/.ssh/id_rsa
+
+Host github-COMPANY
+  HostName github.com
+  User git
+  IdentityFile ~/.ssh/id_rsa_COMPANY
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h4 id=&quot;修改仓库地址&quot;&gt;修改仓库地址&lt;/h4&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git remote &lt;span class=&quot;nb&quot;&gt;set&lt;/span&gt;-url origin git@github-COMPANY:Company/testing.git
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;这样就会通过github-COMPANY来找到config文件中对应的仓库&lt;/p&gt;
+
+&lt;h3 id=&quot;ref&quot;&gt;ref&lt;/h3&gt;
+
+&lt;p&gt;https://code.tutsplus.com/tutorials/quick-tip-how-to-work-with-github-and-multiple-accounts–net-22574&lt;/p&gt;
+</description>
+        <pubDate>Fri, 09 Mar 2018 14:32:24 +0800</pubDate>
+        <link>http://localhost:4000/2018/03/work-with-github-and-multiple-accounts/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/03/work-with-github-and-multiple-accounts/</guid>
+        
+        <category>other</category>
+        
+        
+      </item>
+    
+      <item>
         <title>在GitHub上搭建个人博客</title>
-        <description>&lt;p&gt;创建项目&lt;/p&gt;
+        <description>&lt;p&gt;*创建项目&lt;/p&gt;
 
 &lt;p&gt;搭建本地环境&lt;/p&gt;
 
@@ -26,6 +85,12 @@
 &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;dig yaoandw.netlify.com +noall +answer&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;支持https&lt;/p&gt;
+
+&lt;p&gt;ref&lt;/p&gt;
+
+&lt;p&gt;http://louisly.com/2016/04/used-jekyll-to-create-my-github-blog/&lt;/p&gt;
+
+&lt;p&gt;https://jaeger.itscoder.com/web/2017/08/30/github-page-https&lt;/p&gt;
 </description>
         <pubDate>Thu, 08 Mar 2018 15:32:24 +0800</pubDate>
         <link>http://localhost:4000/2018/03/create-blog-on-github-page/</link>

@@ -99,6 +99,17 @@ if (window.location.pathname.substring(0, 5) == "/tag/") {
 
 看看是否ok了
 
+#### 添加统计
+使用[不蒜子](http://busuanzi.ibruce.info/)统计
+在`_include/footer.html`中加入
+
+```html
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+<span id="busuanzi_container_site_uv">本站访客数<span id="busuanzi_value_site_uv"></span>人次</span>
+<span id="busuanzi_container_page_pv">本文总阅读量<span id="busuanzi_value_page_pv"></span>次</span>
+```
+
 #### 绑定域名
 
 访问github上的项目页面,点击`setting`-`GitHub Pages`-`Custom domain`,输入域名.

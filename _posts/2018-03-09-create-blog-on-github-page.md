@@ -122,7 +122,8 @@ dig yaoandw.github.io +noall +answer
 
 登录域名服务商处,我这里是阿里云
 将域名解析到此ip地址.
-好了,这样就可以了
+好了,这样就可以了  
+具体操作可以参考<https://help.github.com/articles/setting-up-an-apex-domain-and-www-subdomain/>
 #### 支持https
 如果使用github提供的的二级域名,默认就是支持https的,但是使用了自己的域名后就会出现证书问题,  
 网上查一下,找到两种方法  

@@ -5,8 +5,8 @@
     <description>Yaoandw is programmer with java(back) and iOS(front) skills</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 11 Mar 2018 19:50:50 +0800</pubDate>
-    <lastBuildDate>Sun, 11 Mar 2018 19:50:50 +0800</lastBuildDate>
+    <pubDate>Sun, 11 Mar 2018 20:09:38 +0800</pubDate>
+    <lastBuildDate>Sun, 11 Mar 2018 20:09:38 +0800</lastBuildDate>
     <generator>Jekyll v3.4.0</generator>
     
       <item>
@@ -187,7 +187,8 @@ tag: java
 
 &lt;p&gt;登录域名服务商处,我这里是阿里云
 将域名解析到此ip地址.
-好了,这样就可以了&lt;/p&gt;
+好了,这样就可以了&lt;br /&gt;
+具体操作可以参考&lt;a href=&quot;https://help.github.com/articles/setting-up-an-apex-domain-and-www-subdomain/&quot;&gt;https://help.github.com/articles/setting-up-an-apex-domain-and-www-subdomain/&lt;/a&gt;&lt;/p&gt;
 &lt;h4 id=&quot;支持https&quot;&gt;支持https&lt;/h4&gt;
 &lt;p&gt;如果使用github提供的的二级域名,默认就是支持https的,但是使用了自己的域名后就会出现证书问题,&lt;br /&gt;
 网上查一下,找到两种方法&lt;/p&gt;

@@ -4,7 +4,7 @@ title: 在GitHub上搭建个人博客
 date: 2018-03-08 15:32:24.000000000 +08:00
 tag: other
 ---
-
+{% raw %}
 #### 创建项目
 按照[github pages](https://pages.github.com/)页面的指引创建项目
 
@@ -75,16 +75,16 @@ mytags:
 修改`_includes/side_panel.html`,找到
 
 ```html
-{% raw %}{% for item in site.nav %}
+{% for item in site.nav %}
     <li class="navigation__item"><a href="{{item.url}}" target="_blank" title="{{item.description}}">{{item.title}}</a></li>
-{% endfor %}{% endraw %}             
+{% endfor %}           
 ```
 在下面加入
 
 ```html
-{% raw %}{% for item in site.mytags %}
+{% for item in site.mytags %}
     <li class="navigation__item"><a href="{{item.url}}" title="{{item.description}}">{{item.title}}</a></li>
-{% endfor %}{% endraw %}
+{% endfor %}
 ```
 如果你创建的目录不是取名`/tag/`的话,还需要修改`js/main.js`,添加或者修改这段代码
 
@@ -127,3 +127,4 @@ dig yaoandw.github.io +noall +answer
 <http://louisly.com/2016/04/used-jekyll-to-create-my-github-blog/>
 
 <https://jaeger.itscoder.com/web/2017/08/30/github-page-https>
+{% endraw %}

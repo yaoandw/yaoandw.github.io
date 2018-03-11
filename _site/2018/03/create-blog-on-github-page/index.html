@@ -7,16 +7,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   <title>在GitHub上搭建个人博客</title>
-  <meta name="description" content="*创建项目">
+  <meta name="description" content="创建项目按照github pages页面的指引创建项目">
   <meta name="author" content="Wei Wang">
 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="在GitHub上搭建个人博客">
-  <meta name="twitter:description" content="*创建项目">
+  <meta name="twitter:description" content="创建项目按照github pages页面的指引创建项目">
   
   <meta property="og:type" content="article">
   <meta property="og:title" content="在GitHub上搭建个人博客">
-  <meta property="og:description" content="*创建项目">
+  <meta property="og:description" content="创建项目按照github pages页面的指引创建项目">
   
   <!-- <link rel="icon" type="image/png" href="/assets/images/favicon.png" /> -->
   <!-- <link href="/assets/images/favicon.png" rel="shortcut icon" type="image/png"> -->
@@ -161,27 +161,140 @@
   </header>
 
   <section class="post">
-    <p>*创建项目</p>
+    <h4 id="创建项目">创建项目</h4>
+<p>按照<a href="https://pages.github.com/">github pages</a>页面的指引创建项目</p>
 
-<p>搭建本地环境</p>
+<h4 id="搭建本地环境">搭建本地环境</h4>
+<p>jekyll依赖ruby环境<br />
+安装完ruby环境后执行</p>
+
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="c"># Install Jekyll and Bundler gems through RubyGems</span>
+gem install jekyll bundler
+
+</code></pre>
+</div>
+<p>将github上的博客项目clone到本地</p>
+
+<p><code class="highlighter-rouge">git clone https://github.com/yaoandw/yaoandw.github.io.git</code></p>
+
+<h4 id="下载模板">下载模板</h4>
+<p>下载地址: <a href="https://github.com/onevcat/vno-jekyll">vno-jekyll</a>
+下载完解压后把内容复制到项目目录yaoandw.github.io中,然后执行
+<code class="highlighter-rouge">bundle install</code></p>
+
+<p>执行完毕后,再执行</p>
+
+<p><code class="highlighter-rouge">bundle exec jekyll serve</code><br />
+来启动本地jekyll服务,起来后通过
+<a href="http://localhost:4000/">http://localhost:4000/</a>访问</p>
+<h4 id="修改模板支持标签">修改模板支持标签</h4>
+<p>刚才下载的vno-jekyll模板是不支持标签功能的,下面做些改动来支持标签功能
+在<code class="highlighter-rouge">_layout</code>目录下创建文件<code class="highlighter-rouge">tagpage.html</code>,输入</p>
+
+<div class="language-html highlighter-rouge"><pre class="highlight"><code>---
+layout: default
+---
+
+<span class="nt">&lt;h1&gt;</span>other<span class="nt">&lt;/h1&gt;</span>
+
+<span class="nt">&lt;ul&gt;</span>
+
+  <span class="nt">&lt;li&gt;</span>
+    March 09, 2018: <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"/2018/03/work-with-github-and-multiple-accounts/"</span><span class="nt">&gt;</span>多个github账号提交问题<span class="nt">&lt;/a&gt;</span>
+  <span class="nt">&lt;/li&gt;</span>
+
+  <span class="nt">&lt;li&gt;</span>
+    March 08, 2018: <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"/2018/03/create-blog-on-github-page/"</span><span class="nt">&gt;</span>在GitHub上搭建个人博客<span class="nt">&lt;/a&gt;</span>
+  <span class="nt">&lt;/li&gt;</span>
+
+  <span class="nt">&lt;li&gt;</span>
+    February 16, 2016: <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"/2016/02/hello-world-vno/"</span><span class="nt">&gt;</span>Hello World - Vno<span class="nt">&lt;/a&gt;</span>
+  <span class="nt">&lt;/li&gt;</span>
+
+<span class="nt">&lt;/ul&gt;</span>
+</code></pre>
+</div>
+<p>创建<code class="highlighter-rouge">yaoandw.github.io/tag/java/index.html</code>输入</p>
+
+<div class="language-html highlighter-rouge"><pre class="highlight"><code>---
+layout: tagpage
+tag: java
+---
+</code></pre>
+</div>
+<p>这里可以依次创建你想要创建的标签,eg:<code class="highlighter-rouge">yaoandw.github.io/tag/android/index.html</code></p>
+
+<p>然后修改<code class="highlighter-rouge">_config.yml</code>文件,加入</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>mytags:
+    - {title: Java, description: java, url: '/tag/java/index.html'}
+    - {title: iOS, description: iOS, url: '/tag/ios/index.html'}
+    - {title: Android, description: Android, url: '/tag/android/index.html'}
+    - {title: Financial, description: Financial, url: '/tag/financial/index.html'}
+    - {title: Kid, description: Kid, url: '/tag/kid/index.html'}
+    - {title: Other, description: Other, url: '/tag/other/index.html'}
+</code></pre>
+</div>
+<p>修改<code class="highlighter-rouge">_includes/side_panel.html</code>,找到</p>
+
+<div class="language-html highlighter-rouge"><pre class="highlight"><code>{% for item in site.nav %}
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"navigation__item"</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">"{{item.url}}"</span> <span class="na">target=</span><span class="s">"_blank"</span> <span class="na">title=</span><span class="s">"{{item.description}}"</span><span class="nt">&gt;</span>{{item.title}}<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+{% endfor %}             
+</code></pre>
+</div>
+<p>在下面加入</p>
+
+<div class="language-html highlighter-rouge"><pre class="highlight"><code>{% for item in site.mytags %}
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"navigation__item"</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">"{{item.url}}"</span> <span class="na">title=</span><span class="s">"{{item.description}}"</span><span class="nt">&gt;</span>{{item.title}}<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+{% endfor %}
+</code></pre>
+</div>
+<p>如果你创建的目录不是取名<code class="highlighter-rouge">/tag/</code>的话,还需要修改<code class="highlighter-rouge">js/main.js</code>,添加或者修改这段代码</p>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">pathname</span><span class="p">.</span><span class="nx">substring</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span> <span class="o">==</span> <span class="s2">"/tag/"</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s1">'.panel-cover'</span><span class="p">).</span><span class="nx">addClass</span><span class="p">(</span><span class="s1">'panel-cover--collapsed'</span><span class="p">);</span>
+  <span class="p">}</span>
+</code></pre>
+</div>
+<p>好了,现在执行</p>
 
 <p><code class="highlighter-rouge">bundle exec jekyll serve</code></p>
 
-<p>下载模板</p>
+<p>看看是否ok了</p>
 
-<p>修改模板支持标签</p>
+<h4 id="绑定域名">绑定域名</h4>
 
-<p>绑定域名</p>
+<p>访问github上的项目页面,点击<code class="highlighter-rouge">setting</code>-<code class="highlighter-rouge">GitHub Pages</code>-<code class="highlighter-rouge">Custom domain</code>,输入域名.</p>
 
-<p><code class="highlighter-rouge">dig yaoandw.netlify.com +noall +answer</code></p>
+<p>然后回到终端,执行</p>
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code>dig yaoandw.github.io +noall +answer
+</code></pre>
+</div>
+<p>获取到一个ip</p>
 
-<p>支持https</p>
+<p>登录域名服务商处,我这里是阿里云
+将域名解析到此ip地址.
+好了,这样就可以了</p>
+<h4 id="支持https">支持https</h4>
+<p>如果使用github提供的的二级域名,默认就是支持https的,但是使用了自己的域名后就会出现证书问题,<br />
+网上查一下,找到两种方法</p>
 
-<p>ref</p>
+<ul>
+  <li>
+    <p>使用cloudflare中转一下,可以参考<a href="https://www.jonathan-petitcolas.com/2017/01/13/using-https-with-custom-domain-name-on-github-pages.html">这里</a></p>
+  </li>
+  <li>
+    <p>使用<a href="https://www.netlify.com/">netlify</a>提供的空间,可以参考<a href="https://jaeger.itscoder.com/web/2017/08/30/github-page-https">这里</a></p>
+  </li>
+</ul>
 
-<p>http://louisly.com/2016/04/used-jekyll-to-create-my-github-blog/</p>
+<p>本人使用了第二种方案,更直接一点,不过要注意一点,在netlify上完成设置后,不要忘了将域名指向netlify这边.</p>
 
-<p>https://jaeger.itscoder.com/web/2017/08/30/github-page-https</p>
+<h3 id="ref">ref</h3>
+
+<p><a href="http://louisly.com/2016/04/used-jekyll-to-create-my-github-blog/">http://louisly.com/2016/04/used-jekyll-to-create-my-github-blog/</a></p>
+
+<p><a href="https://jaeger.itscoder.com/web/2017/08/30/github-page-https">https://jaeger.itscoder.com/web/2017/08/30/github-page-https</a></p>
 
   </section>
 </article>

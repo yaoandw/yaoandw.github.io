@@ -6,17 +6,17 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <title>centos7上挂载ntfs格式的u盘</title>
-  <meta name="description" content="#安装epel库yum --enablerepo=extras install epel-release#安装依赖包yum --enablerepo epel install ntfs-3g#挂载mount -t ntfs-3g /dev/sdb1 /mnt/usb">
+  <title>直接在文件系统中将文件加入owncloud</title>
+  <meta name="description" content="#到occ命令目录cd /home/wwwroot/default/owncloud#www是用户sudo -u www php occ files:scan --all更多命令可以参考">
   <meta name="author" content="Yaoandw">
 
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="centos7上挂载ntfs格式的u盘">
-  <meta name="twitter:description" content="#安装epel库yum --enablerepo=extras install epel-release#安装依赖包yum --enablerepo epel install ntfs-3g#挂载mount -t ntfs-3g /dev/sdb1 /mnt/usb">
+  <meta name="twitter:title" content="直接在文件系统中将文件加入owncloud">
+  <meta name="twitter:description" content="#到occ命令目录cd /home/wwwroot/default/owncloud#www是用户sudo -u www php occ files:scan --all更多命令可以参考">
   
   <meta property="og:type" content="article">
-  <meta property="og:title" content="centos7上挂载ntfs格式的u盘">
-  <meta property="og:description" content="#安装epel库yum --enablerepo=extras install epel-release#安装依赖包yum --enablerepo epel install ntfs-3g#挂载mount -t ntfs-3g /dev/sdb1 /mnt/usb">
+  <meta property="og:title" content="直接在文件系统中将文件加入owncloud">
+  <meta property="og:description" content="#到occ命令目录cd /home/wwwroot/default/owncloud#www是用户sudo -u www php occ files:scan --all更多命令可以参考">
   
   <!-- <link rel="icon" type="image/png" href="/assets/images/favicon.png" /> -->
   <!-- <link href="/assets/images/favicon.png" rel="shortcut icon" type="image/png"> -->
@@ -26,7 +26,7 @@
   <link rel="stylesheet" href="/css/main.css">
   <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
-  <link rel="canonical" href="http://localhost:4000/2018/03/mount-ntfs-u-to-centos-7/">
+  <link rel="canonical" href="http://localhost:4000/2018/03/add-file-to-owncloud-in-filesystem/">
   <link rel="alternate" type="application/rss+xml" title="Yaoandw" href="http://localhost:4000/feed.xml">
   
   <meta name="google-site-verification" content="1-1ZlHoRvM0T2FqPbW2S-qLgYXN6rsn52kErlMPd_gw" />
@@ -168,18 +168,19 @@
     <div class="post-meta">
       <time datetime="2018-03-13 10:32:24 +0800" itemprop="datePublished" class="post-meta__date date">2018-03-13</time> &#8226; <span class="post-meta__tags tags">other</span>
     </div>
-    <h1 class="post-title">centos7上挂载ntfs格式的u盘</h1>
+    <h1 class="post-title">直接在文件系统中将文件加入owncloud</h1>
   </header>
 
   <section class="post">
-    <div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="c">#安装epel库</span>
-yum --enablerepo<span class="o">=</span>extras install epel-release
-<span class="c">#安装依赖包</span>
-yum --enablerepo epel install ntfs-3g
-<span class="c">#挂载</span>
-mount -t ntfs-3g /dev/sdb1 /mnt/usb
+    <div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="c">#到occ命令目录</span>
+<span class="nb">cd</span> /home/wwwroot/default/owncloud
+<span class="c">#www是用户</span>
+sudo -u www php occ files:scan --all
 </code></pre>
 </div>
+<p>更多命令可以参考</p>
+
+<p><a href="https://doc.owncloud.org/server/9.0/admin_manual/configuration_server/occ_command.html#file-operations-label">https://doc.owncloud.org/server/9.0/admin_manual/configuration_server/occ_command.html#file-operations-label</a></p>
 
   </section>
 </article>
@@ -187,13 +188,21 @@ mount -t ntfs-3g /dev/sdb1 /mnt/usb
 <section class="read-more">
    
    
+   <div class="read-more-item">
+       <span class="read-more-item-dim">最近的文章</span>
+       <h2 class="post-list__post-title post-title"><a href="/2018/03/mount-ntfs-u-to-centos-7/" title="link to centos7上挂载ntfs格式的u盘">centos7上挂载ntfs格式的u盘</a></h2>
+       <p class="excerpt">#安装epel库yum --enablerepo=extras install epel-release#安装依赖包yum --enablerepo epel install ntfs-3g#挂载mount -t ntfs-3g /dev/sdb1 /mnt/usb&hellip;</p>
+       <div class="post-list__meta"><time datetime="2018-03-13 10:32:24 +0800" class="post-list__meta--date date">2018-03-13</time> &#8226; <span class="post-list__meta--tags tags">other</span><a class="btn-border-small" href=/2018/03/mount-ntfs-u-to-centos-7/>继续阅读</a></div>
+   </div>
+   
+   
    
    
    <div class="read-more-item">
        <span class="read-more-item-dim">更早的文章</span>
-       <h2 class="post-list__post-title post-title"><a href="/2018/03/add-file-to-owncloud-in-filesystem/" title="link to 直接在文件系统中将文件加入owncloud">直接在文件系统中将文件加入owncloud</a></h2>
-       <p class="excerpt">#到occ命令目录cd /home/wwwroot/default/owncloud#www是用户sudo -u www php occ files:scan --all更多命令可以参考https://doc.owncloud.org/server/9.0/admin_manual/configuration_server/occ_command.html#file-operations-label&hellip;</p>
-       <div class="post-list__meta"><time datetime="2018-03-13 10:32:24 +0800" class="post-list__meta--date date">2018-03-13</time> &#8226; <span class="post-list__meta--tags tags">other</span><a class="btn-border-small" href=/2018/03/add-file-to-owncloud-in-filesystem/>继续阅读</a></div>
+       <h2 class="post-list__post-title post-title"><a href="/2018/03/work-with-github-and-multiple-accounts/" title="link to 多个github账号提交问题">多个github账号提交问题</a></h2>
+       <p class="excerpt">此方法是基于ssh方式的,https方式还没有尝试成功创建ssh keyssh-keygen -t rsa -C "your-email-address"将文件保存为id_rsa_COMPANY的格式,并保存到~/.ssh/id_rsa_COMPANY把新的key加入到github上访问github,https://github.com/settings/keys,创建一个new ssh key,将id_rsa_COMPANY.pub的内容复制上去.返回终端,输入ssh-add ~/.ss...&hellip;</p>
+       <div class="post-list__meta"><time datetime="2018-03-09 15:32:24 +0900" class="post-list__meta--date date">2018-03-09</time> &#8226; <span class="post-list__meta--tags tags">other</span><a class="btn-border-small" href=/2018/03/work-with-github-and-multiple-accounts/>继续阅读</a></div>
    </div>
    
 </section>
@@ -204,8 +213,8 @@ mount -t ntfs-3g /dev/sdb1 /mnt/usb
     <script>
     
     var disqus_config = function () {
-        this.page.url = "http://localhost:4000/2018/03/mount-ntfs-u-to-centos-7/";
-        this.page.identifier = "/2018/03/mount-ntfs-u-to-centos-7/";
+        this.page.url = "http://localhost:4000/2018/03/add-file-to-owncloud-in-filesystem/";
+        this.page.identifier = "/2018/03/add-file-to-owncloud-in-filesystem/";
     };
 
     var disqus_shortname = 'yaoandw';

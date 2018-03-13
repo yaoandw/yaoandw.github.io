@@ -6,17 +6,17 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <title>Yaoandw</title>
-  <meta name="description" content="Yaoandw is programmer with java(back) and iOS(front) skills">
+  <title>centos7上挂载ntfs格式的u盘</title>
+  <meta name="description" content="#安装epel库yum --enablerepo=extras install epel-release#安装依赖包yum --enablerepo epel install ntfs-3g#挂载mount -t ntfs-3g /dev/sdb1 /mnt/usb">
   <meta name="author" content="Yaoandw">
 
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Yaoandw">
-  <meta name="twitter:description" content="Yaoandw is programmer with java(back) and iOS(front) skills">
+  <meta name="twitter:title" content="centos7上挂载ntfs格式的u盘">
+  <meta name="twitter:description" content="#安装epel库yum --enablerepo=extras install epel-release#安装依赖包yum --enablerepo epel install ntfs-3g#挂载mount -t ntfs-3g /dev/sdb1 /mnt/usb">
   
   <meta property="og:type" content="article">
-  <meta property="og:title" content="Yaoandw">
-  <meta property="og:description" content="Yaoandw is programmer with java(back) and iOS(front) skills">
+  <meta property="og:title" content="centos7上挂载ntfs格式的u盘">
+  <meta property="og:description" content="#安装epel库yum --enablerepo=extras install epel-release#安装依赖包yum --enablerepo epel install ntfs-3g#挂载mount -t ntfs-3g /dev/sdb1 /mnt/usb">
   
   <!-- <link rel="icon" type="image/png" href="/assets/images/favicon.png" /> -->
   <!-- <link href="/assets/images/favicon.png" rel="shortcut icon" type="image/png"> -->
@@ -26,7 +26,7 @@
   <link rel="stylesheet" href="/css/main.css">
   <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
-  <link rel="canonical" href="http://localhost:4000/">
+  <link rel="canonical" href="http://localhost:4000/2018/03/mount-ntfs-u-to-centos-7/">
   <link rel="alternate" type="application/rss+xml" title="Yaoandw" href="http://localhost:4000/feed.xml">
   
   <meta name="google-site-verification" content="1-1ZlHoRvM0T2FqPbW2S-qLgYXN6rsn52kErlMPd_gw" />
@@ -52,7 +52,7 @@
         <i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
     </span>
     
-    <header class="panel-cover " style="background-image: url('/assets/images/background-cover.jpg')">
+    <header class="panel-cover panel-cover--collapsed" style="background-image: url('/assets/images/background-cover.jpg')">
   <div class="panel-main">
 
     <div class="panel-main__inner panel-inverted">
@@ -163,43 +163,68 @@
 
     <div class="content-wrapper">
         <div class="content-wrapper__inner">
-            <div class="main-post-list hidden">
+            <article class="post-container post-container--single" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <div class="post-meta">
+      <time datetime="2018-03-13 10:32:24 +0800" itemprop="datePublished" class="post-meta__date date">2018-03-13</time> &#8226; <span class="post-meta__tags tags">other</span>
+    </div>
+    <h1 class="post-title">centos7上挂载ntfs格式的u盘</h1>
+  </header>
 
-  <ol class="post-list">
-    
-    <li>
-      <h2 class="post-list__post-title post-title"><a href="/2018/03/mount-ntfs-u-to-centos-7/" title="访问 centos7上挂载ntfs格式的u盘">centos7上挂载ntfs格式的u盘</a></h2>
-      <p class="excerpt">#安装epel库yum --enablerepo=extras install epel-release#安装依赖包yum --enablerepo epel install ntfs-3g#挂载mount -t ntfs-3g /dev/sdb1 /mnt/usb&hellip;</p>
-      <div class="post-list__meta"><time datetime="2018-03-13 10:32:24 +0800" class="post-list__meta--date date">2018-03-13</time> &#8226; <span class="post-list__meta--tags tags">other</span><a class="btn-border-small" href=/2018/03/mount-ntfs-u-to-centos-7/>继续阅读</a></div>
-      <hr class="post-list__divider" />
-    </li>
-    
-    <li>
-      <h2 class="post-list__post-title post-title"><a href="/2018/03/work-with-github-and-multiple-accounts/" title="访问 多个github账号提交问题">多个github账号提交问题</a></h2>
-      <p class="excerpt">此方法是基于ssh方式的,https方式还没有尝试成功创建ssh keyssh-keygen -t rsa -C "your-email-address"将文件保存为id_rsa_COMPANY的格式,并保存到~/.ssh/id_rsa_COMPANY把新的key加入到github上访问github,https://github.com/settings/keys,创建一个new ssh key,将id_rsa_COMPANY.pub的内容复制上去.返回终端,输入ssh-add ~/.ss...&hellip;</p>
-      <div class="post-list__meta"><time datetime="2018-03-09 15:32:24 +0900" class="post-list__meta--date date">2018-03-09</time> &#8226; <span class="post-list__meta--tags tags">other</span><a class="btn-border-small" href=/2018/03/work-with-github-and-multiple-accounts/>继续阅读</a></div>
-      <hr class="post-list__divider" />
-    </li>
-    
-    <li>
-      <h2 class="post-list__post-title post-title"><a href="/2018/03/create-blog-on-github-page/" title="访问 在GitHub上搭建个人博客">在GitHub上搭建个人博客</a></h2>
-      <p class="excerpt">创建项目按照github pages页面的指引创建项目搭建本地环境jekyll依赖ruby环境安装完ruby环境后执行# Install Jekyll and Bundler gems through RubyGemsgem install jekyll bundler将github上的博客项目clone到本地git clone https://github.com/yaoandw/yaoandw.github.io.git下载模板下载地址: vno-jekyll下载完解压后把内容复制到项...&hellip;</p>
-      <div class="post-list__meta"><time datetime="2018-03-08 15:32:24 +0800" class="post-list__meta--date date">2018-03-08</time> &#8226; <span class="post-list__meta--tags tags">other</span><a class="btn-border-small" href=/2018/03/create-blog-on-github-page/>继续阅读</a></div>
-      <hr class="post-list__divider" />
-    </li>
-    
-  </ol>
-
-  <hr class="post-list__divider " />
-
-<nav class="pagination" role="navigation">
-    
-    <span class="pagination__page-number">1 / 1</span>
-    
-</nav>
-
-
+  <section class="post">
+    <div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="c">#安装epel库</span>
+yum --enablerepo<span class="o">=</span>extras install epel-release
+<span class="c">#安装依赖包</span>
+yum --enablerepo epel install ntfs-3g
+<span class="c">#挂载</span>
+mount -t ntfs-3g /dev/sdb1 /mnt/usb
+</code></pre>
 </div>
+
+  </section>
+</article>
+
+<section class="read-more">
+   
+   
+   
+   
+   <div class="read-more-item">
+       <span class="read-more-item-dim">更早的文章</span>
+       <h2 class="post-list__post-title post-title"><a href="/2018/03/work-with-github-and-multiple-accounts/" title="link to 多个github账号提交问题">多个github账号提交问题</a></h2>
+       <p class="excerpt">此方法是基于ssh方式的,https方式还没有尝试成功创建ssh keyssh-keygen -t rsa -C "your-email-address"将文件保存为id_rsa_COMPANY的格式,并保存到~/.ssh/id_rsa_COMPANY把新的key加入到github上访问github,https://github.com/settings/keys,创建一个new ssh key,将id_rsa_COMPANY.pub的内容复制上去.返回终端,输入ssh-add ~/.ss...&hellip;</p>
+       <div class="post-list__meta"><time datetime="2018-03-09 15:32:24 +0900" class="post-list__meta--date date">2018-03-09</time> &#8226; <span class="post-list__meta--tags tags">other</span><a class="btn-border-small" href=/2018/03/work-with-github-and-multiple-accounts/>继续阅读</a></div>
+   </div>
+   
+</section>
+
+<section class="post-comments">
+  
+    <div id="disqus_thread"></div>
+    <script>
+    
+    var disqus_config = function () {
+        this.page.url = "http://localhost:4000/2018/03/mount-ntfs-u-to-centos-7/";
+        this.page.identifier = "/2018/03/mount-ntfs-u-to-centos-7/";
+    };
+
+    var disqus_shortname = 'yaoandw';
+    
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+    <noscript>要查看<a href="http://disqus.com/?ref_noscript"> Disqus </a>评论，请启用 JavaScript</noscript>
+    
+  
+  
+  
+  
+</section>
+
 
             <section class="footer">
     <footer>
